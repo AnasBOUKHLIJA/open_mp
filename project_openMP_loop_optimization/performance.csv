@@ -1,0 +1,21 @@
+program_name|threads_count|execution_time|start_date|end_date
+simple_loop_openmp|2|6.08|2024-09-24 02:18:32|2024-09-24 02:18:38
+simple_loop_openmp|4|3.01|2024-09-24 02:18:38|2024-09-24 02:18:41
+simple_loop_openmp|6|2.40|2024-09-24 02:18:41|2024-09-24 02:18:43
+simple_loop_openmp|2|6.05|2024-09-24 02:22:38|2024-09-24 02:22:44
+simple_loop_openmp|4|3.04|2024-09-24 02:22:44|2024-09-24 02:22:47
+simple_loop_openmp|6|2.41|2024-09-24 02:22:47|2024-09-24 02:22:49
+simple_loop_openmp|8|2.00|2024-09-24 02:22:49|2024-09-24 02:22:51
+loop_unrolling_openmp|2|5.91|2024-09-24 02:29:35|2024-09-24 02:29:41
+loop_unrolling_openmp|4|2.97|2024-09-24 02:29:41|2024-09-24 02:29:44
+loop_unrolling_openmp|6|2.36|2024-09-24 02:29:44|2024-09-24 02:29:46
+loop_unrolling_openmp|8|2.06|2024-09-24 02:29:46|2024-09-24 02:29:48
+loop_unrolling_openmp|1|2.06|2024-09-24 02:29:46|2024-09-24 02:29:48
+loop_fusion_openmp|2|5.73|2024-09-24 02:33:19|2024-09-24 02:33:25
+loop_fusion_openmp|4|3.06|2024-09-24 02:33:25|2024-09-24 02:33:28
+loop_fusion_openmp|6|2.38|2024-09-24 02:33:28|2024-09-24 02:33:30
+loop_fusion_openmp|8|1.98|2024-09-24 02:33:30|2024-09-24 02:33:32
+combined_optimizations_openmp|2|6.12|2024-09-24 02:35:33|2024-09-24 02:35:39
+combined_optimizations_openmp|4|3.00|2024-09-24 02:35:39|2024-09-24 02:35:42
+combined_optimizations_openmp|6|2.38|2024-09-24 02:35:42|2024-09-24 02:35:44
+combined_optimizations_openmp|8|2.00|2024-09-24 02:35:44|2024-09-24 02:35:46
