@@ -5,7 +5,6 @@
 #include <omp.h>
 #include "performance_logger.h"
 
-#define N 150000000
 #define PROGRAMNAME "sequential_simple_loop"
 
 int main() {

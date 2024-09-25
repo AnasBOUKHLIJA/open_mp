@@ -5,7 +5,6 @@
 #include <math.h> 
 #include "performance_logger.h"
 
-#define N 150000000
 #define PROGRAMNAME "parallel_simple_loop_openmp"
 
 int main() {

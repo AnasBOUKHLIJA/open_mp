@@ -3,6 +3,7 @@
 #include <time.h>
 #include "performance_logger.h"
 
+
 #define FILE_NAME "performance.csv"
 
 void appendToCSV(const char *programName, int threadsCount, double executionTime, const char *startDate, const char *endDate) {
