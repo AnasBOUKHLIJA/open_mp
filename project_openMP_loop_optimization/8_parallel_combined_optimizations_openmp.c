@@ -5,8 +5,8 @@
 #include <math.h> 
 #include "performance_logger.h"
 
-#define N 100000000
-#define PROGRAMNAME "combined_optimizations_openmp"
+#define N 150000000
+#define PROGRAMNAME "parallel_combined_optimizations_openmp"
 
 int main() {
 

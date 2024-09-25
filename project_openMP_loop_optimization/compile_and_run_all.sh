@@ -9,35 +9,31 @@ declare -a programs=("1_sequential_simple_loop.c"
                      "7_parallel_loop_fusion_openmp.c"
                      "8_parallel_combined_optimizations_openmp.c")
 
-echo "Veuillez choisir un programme à compiler et exécuter : "
-for i in "${!programs[@]}"; do
-    printf "%d) %s\n" "$((i + 1))" "${programs[$i]}"
-done
+mkdir -p results
 
-read -p "Entrez un numéro (1-${#programs[@]}): " user_input
+for program in "${programs[@]}"; do
+    output_name=$(basename "$program" .c)
 
-index=$(($user_input - 1))
-if [ "$index" -ge 0 ] && [ "$index" -lt "${#programs[@]}" ]; then
-    program="${programs[$index]}"
-    output_name=$(basename "$program" .c) # Extraire le nom du fichier sans l'extension .c
-
-    echo "Compilation de ${program} en tant que ${output_name}"
+    echo "Compilation of ${program} as ${output_name}"
 
     gcc -fopenmp -o "$output_name" "$program" performance_logger.c -lm
 
     if [ $? -ne 0 ]; then
-        echo "La compilation a échoué pour ${program}"
+        echo "Compilation failed for ${program}"
         exit 1
     fi
-
-    mkdir -p results
 
     mv -f "$output_name" results/
 
     echo "Exécution de ${output_name}"
     ./results/"$output_name"
 
-else
-    echo "Index invalide. Veuillez fournir un numéro entre 1 et ${#programs[@]}."
-    exit 1
-fi
+    if [ $? -ne 0 ]; then
+        echo "Execution failed for ${output_name}"
+        exit 1
+    fi
+
+    echo "Execution of ${output_name} completed"
+done
+
+echo "All programs have been compiled and executed successfully."

@@ -1,12 +1,12 @@
 #include <stdio.h>
+#include <omp.h>
 #include <time.h>
 #include <stdlib.h>
 #include <math.h> 
-#include <omp.h>
 #include "performance_logger.h"
 
-#define N 100000000
-#define PROGRAMNAME "simple_loop"
+#define N 150000000
+#define PROGRAMNAME "sequential_loop_fusion"
 
 int main() {
     
@@ -16,7 +16,7 @@ int main() {
         printf("Memory allocation failed!\n");
         return 1;
     } 
-
+    
     // ------------------------------------------------------------------------------------
     // Time variables
     // ------------------------------------------------------------------------------------
@@ -42,27 +42,24 @@ int main() {
     strftime(startDate, sizeof(startDate), "%Y-%m-%d %H:%M:%S", local);
     printf("Start time: %s\n", startDate);
 
+
     // ------------------------------------------------------------------------------------
-    // Simple Loops
+    // Loop Fusion Applied
     // ------------------------------------------------------------------------------------
     for (int i = 0; i < N; i++) {
-        double temp = array1[i] * 1.5;
-        double sqrt_value = sqrt(temp);
-        double log_value = log(sqrt_value);
-        double sin_value = sin(log_value);
-        double result = cos(sin_value);
+        double temp1 = array1[i] * 2;
+        double sqrt_value1 = sqrt(temp1);
+        double log_value1 = log(sqrt_value1);
+        double sin_value1 = sin(log_value1);
+        double result1 = cos(sin_value1);
+        array1[i] = (int)((result1 * 100) + array1[i] % 100);
 
-        array1[i] = (int)((result * 100) + array1[i] % 100);
-    }
-
-    for (int i = 0; i < N; i++) {
-        double temp = array2[i] * 1.5;
-        double sqrt_value = sqrt(temp);
-        double log_value = log(sqrt_value);
-        double sin_value = sin(log_value);
-        double result = cos(sin_value);
-
-        array2[i] = (int)((result * 100) + array2[i] % 100);
+        double temp2 = array2[i] + 5;
+        double sqrt_value2 = sqrt(temp2);
+        double log_value2 = log(sqrt_value2);
+        double sin_value2 = sin(log_value2);
+        double result2 = cos(sin_value2);
+        array2[i] = (int)((result2 * 100) + array2[i] % 100);
     }
 
     // ------------------------------------------------------------------------------------
@@ -77,7 +74,7 @@ int main() {
     double executionTime = end - start;
     printf("Execution Time: %f seconds\n", end - start);
 
-    appendToCSV(PROGRAMNAME, omp_get_num_threads() ,executionTime, startDate, endDate);
+    appendToCSV(PROGRAMNAME, omp_get_num_threads(), executionTime, startDate, endDate);
 
     // ------------------------------------------------------------------------------------
     // Free the allocated memory

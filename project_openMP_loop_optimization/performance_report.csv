@@ -1,0 +1,21 @@
+program_name,threads_count,execution_time,start_date,end_date,speedup,efficiency,work
+sequential_simple_loop,1,17.4,2024-09-25 19:56:44,2024-09-25 19:57:02,,,
+sequential_loop_unrolling,1,16.86,2024-09-25 19:57:13,2024-09-25 19:57:30,,,
+sequential_loop_fusion,1,17.29,2024-09-25 19:57:40,2024-09-25 19:57:57,,,
+sequential_combined_optimizations,1,17.0,2024-09-25 19:58:10,2024-09-25 19:58:27,,,
+parallel_simple_loop_openmp,2,8.94,2024-09-25 19:58:36,2024-09-25 19:58:45,1.95,0.98,17.88
+parallel_simple_loop_openmp,4,4.53,2024-09-25 19:58:45,2024-09-25 19:58:50,3.84,0.96,18.12
+parallel_simple_loop_openmp,6,3.59,2024-09-25 19:58:50,2024-09-25 19:58:53,4.85,0.81,21.54
+parallel_simple_loop_openmp,8,3.39,2024-09-25 19:58:53,2024-09-25 19:58:57,5.13,0.64,27.12
+parallel_loop_unrolling_openmp,2,8.09,2024-09-25 20:03:58,2024-09-25 20:04:06,2.08,1.04,16.18
+parallel_loop_unrolling_openmp,4,4.25,2024-09-25 20:04:06,2024-09-25 20:04:11,3.97,0.99,17.0
+parallel_loop_unrolling_openmp,6,3.42,2024-09-25 20:04:11,2024-09-25 20:04:14,4.93,0.82,20.52
+parallel_loop_unrolling_openmp,8,2.87,2024-09-25 20:04:14,2024-09-25 20:04:17,5.87,0.73,22.96
+parallel_loop_fusion_openmp,2,8.29,2024-09-25 20:04:34,2024-09-25 20:04:43,2.09,1.04,16.58
+parallel_loop_fusion_openmp,4,4.35,2024-09-25 20:04:43,2024-09-25 20:04:47,3.97,0.99,17.4
+parallel_loop_fusion_openmp,6,3.5,2024-09-25 20:04:47,2024-09-25 20:04:51,4.94,0.82,21.0
+parallel_loop_fusion_openmp,8,4.44,2024-09-25 20:04:51,2024-09-25 20:04:55,3.89,0.49,35.52
+parallel_combined_optimizations_openmp,2,8.44,2024-09-25 20:05:09,2024-09-25 20:05:17,2.01,1.0,16.88
+parallel_combined_optimizations_openmp,4,4.36,2024-09-25 20:05:17,2024-09-25 20:05:22,3.9,0.98,17.44
+parallel_combined_optimizations_openmp,6,4.06,2024-09-25 20:05:22,2024-09-25 20:05:26,4.19,0.7,24.36
+parallel_combined_optimizations_openmp,8,4.37,2024-09-25 20:05:26,2024-09-25 20:05:30,3.89,0.49,34.96

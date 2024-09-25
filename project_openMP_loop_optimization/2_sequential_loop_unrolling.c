@@ -5,8 +5,8 @@
 #include <math.h> 
 #include "performance_logger.h"
 
-#define N 100000000
-#define PROGRAMNAME "loop_unrolling"
+#define N 150000000
+#define PROGRAMNAME "sequential_loop_unrolling"
 
 int main() {
     
