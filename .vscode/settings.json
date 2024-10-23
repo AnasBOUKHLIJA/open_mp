@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.sh": "shellscript",
+        "exercice_1.C": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
